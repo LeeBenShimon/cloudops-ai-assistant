@@ -1,34 +1,168 @@
 {% extends "base.html" %}
-{% block title %}About the RAG Console{% endblock %}
+{% block title %}About CloudOps AI{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 {% endblock %}
 
 {% block content %}
+
 <section class="about-grid">
-  <article class="about-panel panel">
-    <p class="eyebrow">Architecture</p>
-    <h1>One document pipeline, one chat interface, one memory store.</h1>
-    <p>This Flask app keeps the original RAG workflow intact: the report is chunked, embedded, searched with FAISS, and answered by Gemini. The added SQLite layer stores each session's messages so the assistant can stay coherent across follow-up prompts.</p>
+
+  <!-- HERO -->
+  <article class="about-panel panel hero-panel">
+
+    <p class="eyebrow">
+      CloudOps AI Assistant
+    </p>
+
+    <h1>
+      AI-powered DevOps & Cloud Infrastructure Knowledge Platform
+    </h1>
+
+    <p>
+      CloudOps AI Assistant is a Retrieval-Augmented Generation (RAG)
+      system designed for DevOps engineers, cloud practitioners,
+      and infrastructure-focused workflows.
+
+      The platform combines semantic vector retrieval,
+      FAISS similarity search, and Gemini AI to generate
+      grounded responses from technical infrastructure
+      documentation and operational knowledge bases.
+    </p>
+
   </article>
 
+  <!-- TECH STACK -->
   <article class="about-panel panel accent-panel">
-    <p class="eyebrow">Current configuration</p>
-    <ul>
-      <li>{{ document_count }} source document(s)</li>
-      <li>Top {{ retrieval_k }} chunks used per answer</li>
-      <li>Session memory persisted in SQLite</li>
-    </ul>
+
+    <p class="eyebrow">
+      Technology Stack
+    </p>
+
+    <div class="stack-tags">
+
+      <span>Python</span>
+      <span>Flask</span>
+      <span>FAISS</span>
+      <span>Gemini</span>
+      <span>Hugging Face</span>
+      <span>SQLite</span>
+      <span>Docker</span>
+      <span>HTML/CSS</span>
+      <span>JavaScript</span>
+
+    </div>
+
   </article>
 
+  <!-- CURRENT CONFIG -->
   <article class="about-panel panel">
-    <p class="eyebrow">What changed</p>
-    <ol>
-      <li>The CLI loop was wrapped in a Flask web application.</li>
-      <li>The UI now uses local HTML, CSS, and JavaScript only.</li>
-      <li>Conversation history is saved automatically for the active session.</li>
-    </ol>
+
+    <p class="eyebrow">
+      Current Configuration
+    </p>
+
+    <ul class="config-list">
+
+      <li>
+        {{ document_count }} DevOps knowledge document(s)
+      </li>
+
+      <li>
+        Top {{ retrieval_k }} semantic chunks retrieved per response
+      </li>
+
+      <li>
+        Conversation memory persisted using SQLite
+      </li>
+
+      <li>
+        Dockerized Flask deployment environment
+      </li>
+
+    </ul>
+
   </article>
+
+  <!-- HOW IT WORKS -->
+  <article class="about-panel panel">
+
+    <p class="eyebrow">
+      Retrieval Pipeline
+    </p>
+
+    <ol class="pipeline-list">
+
+      <li>
+        Infrastructure documents are chunked into smaller sections
+      </li>
+
+      <li>
+        Hugging Face embeddings convert chunks into vector representations
+      </li>
+
+      <li>
+        FAISS performs semantic similarity retrieval
+      </li>
+
+      <li>
+        Gemini generates grounded AI responses from retrieved context
+      </li>
+
+      <li>
+        SQLite stores session memory for contextual conversations
+      </li>
+
+    </ol>
+
+  </article>
+
+  <!-- FEATURES -->
+  <article class="about-panel panel">
+
+    <p class="eyebrow">
+      Platform Features
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <h3>Semantic Search</h3>
+        <p>
+          FAISS-powered vector similarity retrieval
+          for DevOps knowledge exploration.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Grounded AI</h3>
+        <p>
+          Gemini responses generated from retrieved
+          infrastructure context only.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>PDF & TXT Uploads</h3>
+        <p>
+          Dynamic ingestion of technical documentation
+          and cloud architecture guides.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Session Memory</h3>
+        <p>
+          SQLite-backed contextual conversation memory
+          across follow-up questions.
+        </p>
+      </div>
+
+    </div>
+
+  </article>
+
 </section>
+
 {% endblock %}
