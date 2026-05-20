@@ -1,0 +1,80 @@
+Docker is a containerization platform that allows developers to package applications and their dependencies into isolated environments called containers.
+
+A container includes the application code, runtime, libraries, and dependencies required for execution. Containers are lightweight and start much faster than traditional virtual machines.
+
+A Docker image is a read-only template used to create containers. Images are built using Dockerfiles.
+
+A Dockerfile is a text file that contains instructions for building a Docker image. Common Dockerfile instructions include FROM, RUN, COPY, WORKDIR, EXPOSE, and CMD.
+
+Example Dockerfile:
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["python", "app.py"]
+
+Docker containers are created from Docker images using the docker run command.
+
+Useful Docker commands:
+
+docker build -t myapp .
+
+docker run -p 5000:5000 myapp
+
+docker ps
+
+docker stop <container_id>
+
+docker logs <container_id>
+
+docker exec -it <container_id> bash
+
+Docker networking allows containers to communicate with each other. Containers connected to the same Docker network can communicate using container names.
+
+Docker volumes are used for persistent storage. Volumes allow data to survive even if containers are removed.
+
+Example volume command:
+
+docker run -v myvolume:/data myapp
+
+Docker Compose is a tool for managing multi-container applications using a YAML configuration file.
+
+Example docker-compose.yml:
+
+version: "3"
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+
+  redis:
+    image: redis
+
+Docker Compose commands:
+
+docker compose up
+
+docker compose down
+
+docker compose logs
+
+Docker images should be kept small for faster deployments and better security.
+
+Best practices for Docker:
+- Use official base images
+- Minimize image layers
+- Use .dockerignore
+- Avoid running containers as root
+- Use environment variables for secrets
+- Keep containers stateless when possible
+
+Containers are different from virtual machines. Containers share the host operating system kernel, while virtual machines run separate operating systems.

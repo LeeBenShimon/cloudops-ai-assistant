@@ -1,0 +1,102 @@
+Linux is one of the most widely used operating systems in cloud and DevOps environments.
+
+Linux servers are commonly used to host web applications, databases, and infrastructure services.
+
+Useful Linux commands:
+
+ls
+
+cd
+
+pwd
+
+mkdir
+
+rm
+
+cp
+
+mv
+
+cat
+
+grep
+
+find
+
+top
+
+htop
+
+ps aux
+
+kill
+
+chmod
+
+chown
+
+systemctl
+
+journalctl
+
+tail -f
+
+The chmod command changes file permissions.
+
+Example:
+
+chmod 755 script.sh
+
+The chown command changes file ownership.
+
+Processes can be viewed using ps aux or top.
+
+The kill command terminates running processes.
+
+systemctl is used to manage Linux services.
+
+Example:
+
+systemctl restart nginx
+
+journalctl displays logs from systemd services.
+
+SSH is commonly used for remote server access.
+
+Example SSH command:
+
+ssh user@server-ip
+
+Networking concepts are important in DevOps.
+
+An IP address identifies a device on a network.
+
+Ports allow services to communicate over networks.
+
+Common ports:
+- 22 for SSH
+- 80 for HTTP
+- 443 for HTTPS
+- 3306 for MySQL
+
+The ping command tests network connectivity.
+
+The curl command sends HTTP requests.
+
+The netstat command displays active network connections.
+
+DNS translates domain names into IP addresses.
+
+A firewall controls network traffic entering and leaving a system.
+
+Load balancers distribute traffic across multiple servers.
+
+Linux logs are important for troubleshooting production issues.
+
+Common Linux log locations:
+- /var/log/syslog
+- /var/log/auth.log
+- /var/log/nginx/
+
+Monitoring CPU, memory, and disk usage is essential for maintaining healthy systems.

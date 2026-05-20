@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}About the RAG Console{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="about-grid">
+  <article class="about-panel panel">
+    <p class="eyebrow">Architecture</p>
+    <h1>One document pipeline, one chat interface, one memory store.</h1>
+    <p>This Flask app keeps the original RAG workflow intact: the report is chunked, embedded, searched with FAISS, and answered by Gemini. The added SQLite layer stores each session's messages so the assistant can stay coherent across follow-up prompts.</p>
+  </article>
+
+  <article class="about-panel panel accent-panel">
+    <p class="eyebrow">Current configuration</p>
+    <ul>
+      <li>{{ document_count }} source document(s)</li>
+      <li>Top {{ retrieval_k }} chunks used per answer</li>
+      <li>Session memory persisted in SQLite</li>
+    </ul>
+  </article>
+
+  <article class="about-panel panel">
+    <p class="eyebrow">What changed</p>
+    <ol>
+      <li>The CLI loop was wrapped in a Flask web application.</li>
+      <li>The UI now uses local HTML, CSS, and JavaScript only.</li>
+      <li>Conversation history is saved automatically for the active session.</li>
+    </ol>
+  </article>
+</section>
+{% endblock %}

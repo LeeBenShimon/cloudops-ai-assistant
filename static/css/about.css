@@ -1,0 +1,12 @@
+.about-grid .about-panel:first-child {
+	min-height: 100%;
+}
+
+.about-panel p:first-of-type {
+	margin-top: 14px;
+}
+
+.about-panel ul,
+.about-panel ol {
+	margin-top: 18px;
+}

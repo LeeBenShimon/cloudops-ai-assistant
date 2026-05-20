@@ -1,0 +1,75 @@
+CI/CD stands for Continuous Integration and Continuous Deployment.
+
+Continuous Integration is the practice of automatically testing and validating code changes when developers push code to a repository.
+
+Continuous Deployment automates application deployment to production environments.
+
+CI/CD pipelines reduce manual work and improve software delivery speed.
+
+A typical CI/CD pipeline includes:
+- code checkout
+- dependency installation
+- testing
+- security scanning
+- building artifacts
+- deployment
+
+GitHub Actions is a popular CI/CD platform integrated with GitHub repositories.
+
+Example GitHub Actions workflow:
+
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+Jenkins is another popular automation server used for CI/CD pipelines.
+
+CI pipelines should fail immediately when tests fail.
+
+Automated testing improves software quality and reduces deployment risk.
+
+Common CI/CD pipeline stages:
+- linting
+- unit testing
+- integration testing
+- container image building
+- deployment
+
+Infrastructure as Code allows infrastructure provisioning using configuration files.
+
+Terraform is commonly used for Infrastructure as Code.
+
+Blue-green deployment is a deployment strategy that minimizes downtime.
+
+Canary deployment gradually releases new versions to a subset of users.
+
+Rollback mechanisms are critical for deployment safety.
+
+Secrets management is important in CI/CD pipelines.
+
+Environment variables are commonly used to store configuration values.
+
+Monitoring should be integrated into deployment workflows.
+
+Benefits of CI/CD:
+- faster releases
+- improved reliability
+- reduced human error
+- automated testing
+- better developer productivity

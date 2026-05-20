@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block title %}CloudOps AI Assistant{% endblock %}
+
+{% block content %}
+<section class="hero panel">
+  <div class="hero-copy">
+    <p class="eyebrow">Document-grounded assistant</p>
+    <h1>Your AI-powered DevOps & Cloud infrastructure copilot.</h1>
+    <p class="lead">CloudOps AI Assistant helps engineers explore DevOps, Kubernetes, Docker, Linux, CI/CD, and cloud infrastructure knowledge using semantic retrieval, FAISS vector search, and grounded AI responses.</p>
+
+    <div class="hero-actions">
+      <button
+        type="button"
+        class="pill-button"
+        data-prompt="Explain how Docker networking works."
+      >
+        Docker Networking
+      </button>
+
+      <button
+        type="button"
+        class="pill-button"
+        data-prompt="What is the difference between Kubernetes pods and deployments?"
+      >
+        Kubernetes Basics
+      </button>
+
+      <button
+        type="button"
+        class="pill-button"
+        data-prompt="How does a CI/CD pipeline work?"
+      >
+        CI/CD Pipelines
+      </button>
+    </div>
+
+    <div class="hero-stats">
+      <article>
+        <span>{{ document_count }}</span>
+        <small>Document source</small>
+      </article>
+      <article>
+        <span>FAISS</span>
+        <small>Vector retrieval</small>
+      </article>
+      <article>
+        <span>{{ retrieval_k }}</span>
+        <small>Chunks per answer</small>
+      </article>
+    </div>
+  </div>
+
+  <aside class="session-card">
+    <div class="session-card__top">
+      <p class="eyebrow">Session memory</p>
+      <h2>{{ session_title }}</h2>
+    </div>
+    <dl>
+      <div>
+        <dt>Session ID</dt>
+        <dd id="session-id">{{ session_id[:8] }}…</dd>
+      </div>
+      <div>
+        <dt>Messages stored</dt>
+        <dd id="message-count">{{ message_count }}</dd>
+      </div>
+      <div>
+        <dt>Memory engine</dt>
+        <dd>SQLite</dd>
+      </div>
+    </dl>
+    <button type="button" class="secondary-button" id="reset-session">Start fresh session</button>
+  </aside>
+</section>
+
+<section class="chat-layout">
+  <div class="chat-panel panel">
+    <div class="panel-head">
+      <div>
+        <p class="eyebrow">Conversation</p>
+        <h2>Ask anything about DevOps & Cloud</h2>
+      </div>
+      <p class="live-badge">Live retrieval on demand</p>
+    </div>
+
+    <div id="messages" class="messages" aria-live="polite" aria-label="Conversation history">
+      {% if messages %}
+        {% for message in messages %}
+          <article class="message message--{{ message.role }}">
+            <div class="message__meta">
+              <span>{{ message.role }}</span>
+              <time>{{ message.created_at[:19].replace('T', ' ') }}</time>
+            </div>
+            <div class="message__body">{{ message.content }}</div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state">
+          <h3>Start the conversation</h3>
+          <p>Ask questions about Docker, Kubernetes, Linux, Azure, networking, monitoring, CI/CD pipelines, and DevOps best practices.</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="upload-section">
+
+    <label
+    for="file-upload"
+    class="upload-zone"
+    id="upload-zone"
+    >
+
+        <div class="upload-content">
+
+            <div class="upload-icon">📄</div>
+
+            <div class="upload-title">
+                Upload PDF or TXT Files
+            </div>
+
+            <div class="upload-subtitle">
+                Drag & drop files or click to browse
+            </div>
+
+        </div>
+
+    </label>
+
+    <input
+        type="file"
+        id="file-upload"
+        accept=".pdf,.txt"
+        hidden
+    >
+
+    <div id="upload-status"></div>
+
+</div>
+    <form id="chat-form" class="composer">
+      <label class="sr-only" for="message-input">Ask a question</label>
+      <textarea id="message-input" name="message" rows="4" placeholder="Ask about Docker, Kubernetes, Linux, CI/CD pipelines, Azure, monitoring, networking, or DevOps workflows..."></textarea>
+      <div class="composer-actions">
+        <p class="composer-hint">Shift + Enter for a new line</p>
+        <button class="primary-button" type="submit">Send question</button>
+      </div>
+    </form>
+
+    <div id="sources-panel" class="sources-panel hidden">
+
+      <div class="sources-header">
+
+        <h3>Retrieved Sources</h3>
+
+      </div>
+
+      <div id="sources-list"></div>
+
+</div>
+
+  </div>
+
+  <aside class="sidebar panel">
+    <div class="sidebar-card">
+      <p class="eyebrow">Knowledge Base</p>
+      <div id="uploaded-files-list"
+          class="uploaded-files-list">
+
+      </div>
+
+</div>
+    <div class="sidebar-card">
+      <p class="eyebrow">How it works</p>
+      <ol>
+        <li>DevOps and cloud documents are embedded and indexed into a FAISS vector database.</li>
+        <li>Conversation history is stored in SQLite to support contextual follow-up questions.</li>
+        <li>Gemini generates grounded answers using retrieved DevOps infrastructure knowledge.</li>
+      </ol>
+    </div>
+
+    <div class="sidebar-card muted-card">
+      <p class="eyebrow">Example follow-up</p>
+      <p>““How would you deploy this using Docker Compose?””</p>
+    </div>
+  </aside>
+</section>
+{% endblock %}

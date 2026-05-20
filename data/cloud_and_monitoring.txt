@@ -1,0 +1,68 @@
+Cloud computing provides on-demand access to computing resources over the internet.
+
+Cloud providers include Microsoft Azure, Amazon Web Services, and Google Cloud Platform.
+
+Cloud infrastructure allows organizations to scale resources dynamically.
+
+Virtual machines are software-based computers running inside cloud environments.
+
+Containers are commonly used in modern cloud-native architectures.
+
+Load balancers distribute traffic across multiple application servers.
+
+Auto scaling automatically increases or decreases infrastructure resources based on demand.
+
+High availability ensures applications remain operational during failures.
+
+Monitoring is critical in production systems.
+
+Monitoring helps detect:
+- application failures
+- high CPU usage
+- memory leaks
+- latency issues
+- downtime
+
+Prometheus is a popular monitoring and metrics collection system.
+
+Grafana is commonly used for visualization dashboards.
+
+Alerts notify engineers when systems exceed predefined thresholds.
+
+Logs provide detailed information about system behavior.
+
+Centralized logging improves troubleshooting efficiency.
+
+Cloud environments often use Infrastructure as Code.
+
+Terraform is widely used to provision cloud infrastructure.
+
+Azure services include:
+- Azure Virtual Machines
+- Azure Kubernetes Service
+- Azure Storage
+- Azure Load Balancer
+- Azure Monitor
+
+Cloud security best practices:
+- least privilege access
+- secret management
+- encryption
+- network segmentation
+- multi-factor authentication
+
+Horizontal scaling adds more servers to handle increased traffic.
+
+Vertical scaling increases hardware resources on existing servers.
+
+Disaster recovery planning is important for business continuity.
+
+SLA stands for Service Level Agreement.
+
+SLI stands for Service Level Indicator.
+
+SLO stands for Service Level Objective.
+
+Observability combines metrics, logs, and traces to improve system visibility.
+
+Monitoring tools help DevOps engineers maintain reliable infrastructure and quickly respond to incidents.
