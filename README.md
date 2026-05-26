@@ -171,7 +171,7 @@ http://127.0.0.1:5000
 
 ---
 
-# 📄 Supported File Types
+#  Supported File Types
 
 * PDF
 * TXT
