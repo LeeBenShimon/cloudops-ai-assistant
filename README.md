@@ -1,4 +1,4 @@
-# CloudOps AI Assistant ☁️🤖
+# CloudOps AI Assistant 
 
 CloudOps AI Assistant is a modern Retrieval-Augmented Generation (RAG) web application focused on DevOps and Cloud Infrastructure knowledge.
 
@@ -8,21 +8,21 @@ The system uses semantic search with FAISS vector retrieval and Hugging Face emb
 
 ---
 
-# 🚀 Features
+#  Features
 
-* 🔍 Semantic document retrieval using FAISS
-* 🤖 AI-powered answers with Gemini
-* 📄 Upload PDF and TXT documents
-* 🧠 Conversation memory with SQLite
-* ⚡ Real-time DevOps Q&A experience
-* 📚 Retrieved source display with similarity scores
-* 🎨 Modern DevOps-inspired UI
-* 🌙 Dark futuristic dashboard design
-* ☁️ Cloud & infrastructure knowledge base
+*  Semantic document retrieval using FAISS
+*  AI-powered answers with Gemini
+*  Upload PDF and TXT documents
+*  Conversation memory with SQLite
+*  Real-time DevOps Q&A experience
+*  Retrieved source display with similarity scores
+*  Modern DevOps-inspired UI
+*  Dark futuristic dashboard design
+*  Cloud & infrastructure knowledge base
 
 ---
 
-# 🏗️ RAG Architecture
+#  RAG Architecture
 
 ```text
 User Question
@@ -42,7 +42,7 @@ Grounded AI Response
 
 ---
 
-# 🧰 Technologies Used
+#  Technologies Used
 
 ## Backend
 
@@ -70,7 +70,7 @@ Grounded AI Response
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```text
 cloudops-ai-assistant/
@@ -105,7 +105,7 @@ cloudops-ai-assistant/
 
 ---
 
-# ⚙️ Installation
+#  Installation
 
 ## 1. Clone the repository
 
@@ -145,7 +145,7 @@ pip install -r requirements.txt
 
 ---
 
-# 🔑 Environment Variables
+#  Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -157,7 +157,7 @@ HF_TOKEN=your_huggingface_token
 
 ---
 
-# ▶️ Running the Application
+#  Running the Application
 
 ```bash
 python app.py
@@ -178,7 +178,7 @@ http://127.0.0.1:5000
 
 ---
 
-# 🧠 Example Questions
+#  Example Questions
 
 ```text
 What is the difference between a Kubernetes pod and deployment?
@@ -196,7 +196,7 @@ What does chmod do in Linux?
 
 ---
 
-# 🔍 Retrieval Pipeline
+#  Retrieval Pipeline
 
 1. Documents are uploaded and processed
 2. Text is split into chunks
@@ -208,7 +208,7 @@ What does chmod do in Linux?
 
 ---
 
-# 🛡️ Hallucination Prevention
+#  Hallucination Prevention
 
 The system reduces hallucinations by:
 
@@ -225,7 +225,7 @@ If the documents do not contain enough information, the assistant responds with:
 
 ---
 
-# 🧪 Validation & Testing
+#  Validation & Testing
 
 The application was tested using multiple DevOps and Cloud Infrastructure questions to validate:
 
@@ -237,7 +237,7 @@ The application was tested using multiple DevOps and Cloud Infrastructure questi
 
 ---
 
-# 📈 Future Improvements
+#  Future Improvements
 
 * Streaming AI responses
 * Docker deployment
@@ -250,7 +250,7 @@ The application was tested using multiple DevOps and Cloud Infrastructure questi
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 Lee Ben Shimon
 
@@ -259,6 +259,6 @@ Fullstack & DevOps Enthusiast
 
 ---
 
-# 📜 License
+#  License
 
 This project was created for educational purposes.
